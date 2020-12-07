@@ -27,6 +27,7 @@ struct Graph{T}
         for (n, i) in idx_map
             set_prop!(mg, i, :name, n);
         end
+        weightfield!(mg, :weight); # set weight to correspond to :weight
         G = new{T}(idx_map, pos_map, directed, T, mg);
         skipped = T[];
         for u in keys(L)
